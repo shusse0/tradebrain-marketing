@@ -2,7 +2,7 @@
   "name": "tradebrain-marketing",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx serve . -l $PORT --single"
+    "start": "npx serve . -l $PORT"
   },
   "dependencies": {
     "serve": "^14.0.0"
