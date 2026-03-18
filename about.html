@@ -4,48 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — TradeBrain</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="index.html" class="navbar-logo">
-        <strong style="font-size:20px; color:var(--dark-text);">TradeBrain</strong>
+      <a href="/" class="navbar-logo">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+          <circle cx="6" cy="16" r="3" fill="#2563eb" opacity="0.7"/>
+          <circle cx="13" cy="8" r="2.5" fill="#2563eb"/>
+          <circle cx="13" cy="24" r="2.5" fill="#2563eb" opacity="0.6"/>
+          <circle cx="21" cy="11" r="2.5" fill="#1e3a8a"/>
+          <circle cx="21" cy="21" r="2.5" fill="#1e3a8a" opacity="0.8"/>
+          <circle cx="28" cy="16" r="3" fill="#1e3a8a"/>
+          <line x1="6" y1="16" x2="13" y2="8" stroke="#2563eb" stroke-width="1.2" opacity="0.5"/>
+          <line x1="6" y1="16" x2="13" y2="24" stroke="#2563eb" stroke-width="1.2" opacity="0.4"/>
+          <line x1="13" y1="8" x2="21" y2="11" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+          <line x1="13" y1="24" x2="21" y2="21" stroke="#1e3a8a" stroke-width="1.2" opacity="0.4"/>
+          <line x1="21" y1="11" x2="28" y2="16" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+          <line x1="21" y1="21" x2="28" y2="16" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+        </svg>
+        <span><strong style="color:#1E293B;">Trade</strong><strong style="color:#2563EB;">Brain</strong></span>
       </a>
       <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="https://app.trade-brain.com/login" class="navbar-cta">Sign In</a>
+      <a href="https://app.trade-brain.com/register" class="navbar-cta">Request Access</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://app.trade-brain.com/register">Request Access</a>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="hero-inner">
       <h1>Built different. Built for compliance.</h1>
     </div>
   </section>
 
-  <!-- What TradeBrain Is -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" style="max-width:800px;">
-      <h2 style="margin-bottom:24px;">What TradeBrain is</h2>
-      <p style="font-size:16px; line-height:1.8;">
-        TradeBrain is a single platform that consolidates every core trade compliance workflow into one place. Instead of juggling separate tools for HTS and Schedule B classification, denied party screening, export licensing, ITAR documentation, and audit reporting, compliance teams get a unified system that handles it all. Product descriptions go in; validated classification codes, screening results, license determinations, and audit-ready documentation come out. The result is faster decisions, fewer errors, and a complete compliance record your team can trust during audits.
-      </p>
-    </div>
+  <!-- WHAT TRADEBRAIN IS -->
+  <section style="padding:0 24px 80px;max-width:800px;margin:0 auto;">
+    <p style="font-size:16px;line-height:1.8;">
+      TradeBrain is a purpose-built export compliance platform that consolidates classification, screening, licensing analysis, and regulatory documentation into one intelligent system. Built by compliance professionals who understood the problem before they built the solution.
+    </p>
   </section>
 
-  <!-- Comparison Table -->
-  <section class="section" style="background:var(--bg);">
-    <div class="container">
+  <!-- COMPARISON TABLE -->
+  <section style="background:var(--bg);padding:80px 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
       <div class="section-header">
         <h2>How TradeBrain compares</h2>
       </div>
@@ -62,56 +81,56 @@
           </thead>
           <tbody>
             <tr>
-              <td>HTS + Schedule B</td>
+              <td>HTS + Schedule B in one platform</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td>Partial</td>
               <td>Partial</td>
               <td>Manual</td>
             </tr>
             <tr>
-              <td>ECCN licensing</td>
+              <td>ECCN licensing analysis</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td>Add-on</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td>Manual</td>
             </tr>
             <tr>
-              <td>Party screening</td>
+              <td>Restricted party screening</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td><span class="check-mark">&#10003;</span></td>
               <td><span class="check-mark">&#10003;</span></td>
               <td>Manual</td>
             </tr>
             <tr>
-              <td>ITAR forms</td>
+              <td>ITAR form builder DSP-5/TAA</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td><span class="x-mark">&#10007;</span></td>
               <td><span class="x-mark">&#10007;</span></td>
               <td>Manual</td>
             </tr>
             <tr>
-              <td>License tracking</td>
+              <td>License lifecycle tracking</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td><span class="x-mark">&#10007;</span></td>
               <td>Partial</td>
               <td>Manual</td>
             </tr>
             <tr>
-              <td>Audit trail</td>
+              <td>Audit trail with correction chain</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td>Partial</td>
               <td>Partial</td>
               <td><span class="x-mark">&#10007;</span></td>
             </tr>
             <tr>
-              <td>Speed</td>
-              <td>Seconds</td>
+              <td>Seconds per classification</td>
+              <td><span class="check-mark">&#10003;</span></td>
               <td>Minutes</td>
               <td>Minutes</td>
               <td>Hours</td>
             </tr>
             <tr>
-              <td>Built for SMB</td>
+              <td>Built for SMB defense contractors</td>
               <td><span class="check-mark">&#10003;</span></td>
               <td><span class="x-mark">&#10007;</span></td>
               <td><span class="x-mark">&#10007;</span></td>
@@ -130,60 +149,77 @@
     </div>
   </section>
 
-  <!-- Who It's For -->
+  <!-- WHO IT'S FOR -->
   <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Who it's for</h2>
+    <div class="section-header">
+      <h2>Who it's for</h2>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" stroke="#2563eb" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Defense Contractors</h3>
+        <p>ITAR-controlled hardware exporters who need fast, defensible classification and license management</p>
       </div>
-      <div class="features-grid">
 
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Defense Contractors</h3>
-          <p>Manage ITAR classifications, generate DSP-5 and TAA forms, and screen every party in your supply chain — all from one dashboard built for DFARS and ITAR workflows.</p>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" stroke="#2563eb" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
-          </div>
-          <h3>Export Compliance Teams</h3>
-          <p>Replace fragmented spreadsheets and manual lookups with a single system that classifies, screens, tracks licenses, and produces an audit trail automatically.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <h3>Trade Consultants</h3>
-          <p>Serve more clients in less time. Run bulk classifications, generate branded compliance reports, and maintain separate audit records for each engagement.</p>
-        </div>
-
+        <h3>Export Compliance Teams</h3>
+        <p>In-house compliance officers replacing spreadsheets and patchwork tools with one unified platform</p>
       </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" stroke="#2563eb" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Trade Consultants</h3>
+        <p>Compliance advisors who need a professional platform to serve multiple clients efficiently</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <strong style="color:#fff; font-size:18px;">TradeBrain</strong>
+        <div>
+          <div style="margin-bottom:12px;">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none" style="vertical-align:middle;margin-right:8px;">
+              <circle cx="6" cy="16" r="3" fill="#93c5fd" opacity="0.7"/>
+              <circle cx="13" cy="8" r="2.5" fill="#93c5fd"/>
+              <circle cx="13" cy="24" r="2.5" fill="#93c5fd" opacity="0.6"/>
+              <circle cx="21" cy="11" r="2.5" fill="#ffffff"/>
+              <circle cx="21" cy="21" r="2.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="28" cy="16" r="3" fill="#ffffff"/>
+              <line x1="6" y1="16" x2="13" y2="8" stroke="#93c5fd" stroke-width="1.2" opacity="0.5"/>
+              <line x1="6" y1="16" x2="13" y2="24" stroke="#93c5fd" stroke-width="1.2" opacity="0.4"/>
+              <line x1="13" y1="8" x2="21" y2="11" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+              <line x1="13" y1="24" x2="21" y2="21" stroke="#ffffff" stroke-width="1.2" opacity="0.4"/>
+              <line x1="21" y1="11" x2="28" y2="16" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+              <line x1="21" y1="21" x2="28" y2="16" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+            </svg>
+            <span style="font-size:18px;font-weight:700;color:#ffffff;">Trade</span><span style="font-size:18px;font-weight:700;color:#93c5fd;">Brain</span>
+          </div>
+        </div>
         <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 TradeBrain. All rights reserved.</span>
-        <span>support@trade-brain.com</span>
+        <span>noreply@trade-brain.com</span>
       </div>
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
