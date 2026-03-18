@@ -218,8 +218,8 @@
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var nodes = [];
-    var COUNT = 30;
-    var MAX_DIST = 120;
+    var COUNT = 50;
+    var MAX_DIST = 150;
 
     function resize() {
       var rect = canvas.parentElement.getBoundingClientRect();
@@ -250,7 +250,7 @@
           var dy = nodes[i].y - nodes[j].y;
           var dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MAX_DIST) {
-            var alpha = 0.12 * (1 - dist / MAX_DIST);
+            var alpha = 0.25 * (1 - dist / MAX_DIST);
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -264,8 +264,8 @@
       // Draw nodes
       for (var k = 0; k < COUNT; k++) {
         ctx.beginPath();
-        ctx.arc(nodes[k].x, nodes[k].y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(37,99,235,0.2)';
+        ctx.arc(nodes[k].x, nodes[k].y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(37,99,235,0.5)';
         ctx.fill();
       }
     }
