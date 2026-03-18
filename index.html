@@ -49,8 +49,9 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-inner">
+  <section class="hero" style="position:relative;overflow:hidden;">
+    <canvas id="heroNet" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+    <div class="hero-inner" style="position:relative;z-index:2;">
       <svg viewBox="0 0 32 32" width="64" height="64" fill="none">
         <circle cx="6" cy="16" r="3" fill="#2563eb" opacity="0.7"/>
         <circle cx="13" cy="8" r="2.5" fill="#2563eb"/>
@@ -209,5 +210,86 @@
 
   <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Neural network hero background -->
+  <script>
+  (function() {
+    var canvas = document.getElementById('heroNet');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var nodes = [];
+    var COUNT = 30;
+    var MAX_DIST = 120;
+
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+
+    function init() {
+      resize();
+      nodes = [];
+      for (var i = 0; i < COUNT; i++) {
+        nodes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw lines
+      for (var i = 0; i < COUNT; i++) {
+        for (var j = i + 1; j < COUNT; j++) {
+          var dx = nodes[i].x - nodes[j].x;
+          var dy = nodes[i].y - nodes[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < MAX_DIST) {
+            var alpha = 0.12 * (1 - dist / MAX_DIST);
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = 'rgba(37,99,235,' + alpha + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      for (var k = 0; k < COUNT; k++) {
+        ctx.beginPath();
+        ctx.arc(nodes[k].x, nodes[k].y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(37,99,235,0.2)';
+        ctx.fill();
+      }
+    }
+
+    function update() {
+      for (var i = 0; i < COUNT; i++) {
+        var n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+      }
+    }
+
+    function loop() {
+      update();
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+    loop();
+  })();
+  </script>
 </body>
 </html>
