@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — TradeBrain</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <strong style="font-size:20px; color:var(--dark-text);">TradeBrain</strong>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://app.trade-brain.com/login" class="navbar-cta">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Simple, transparent pricing</h1>
+      <p class="hero-tagline" style="margin-top:16px;">Start free. Scale as you grow.</p>
+
+      <!-- Toggle -->
+      <div style="margin-top:32px; text-align:center;">
+        <div class="toggle-wrap">
+          <button class="toggle-btn" data-period="monthly" onclick="setPeriod('monthly')">Monthly</button>
+          <button class="toggle-btn active" data-period="annual" onclick="setPeriod('annual')">Annual <span style="background:#10b981;color:#fff;font-size:11px;padding:2px 8px;border-radius:6px;margin-left:4px;">2 months free</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Grid -->
+  <section class="section" style="padding-top:24px;">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <!-- FREE TRIAL -->
+        <div class="pricing-card">
+          <p class="tier-name" style="color:var(--muted); margin-bottom:12px;">Free Trial</p>
+          <p><span class="price">$0</span><span class="price-period"> / 7 days</span></p>
+          <ul class="pricing-features" style="margin:20px 0;">
+            <li><span class="check">&#10003;</span> 5 classifications</li>
+            <li><span class="check">&#10003;</span> HTS Lookup</li>
+            <li><span class="check">&#10003;</span> 2 bulk runs</li>
+            <li><span class="check">&#10003;</span> Email support</li>
+          </ul>
+          <a href="https://app.trade-brain.com/register" class="btn-primary" style="width:100%;text-align:center;">Start Free Trial</a>
+        </div>
+
+        <!-- STARTER -->
+        <div class="pricing-card">
+          <p class="tier-name" style="color:var(--muted); margin-bottom:12px;">Starter</p>
+          <p>
+            <span class="price" data-monthly="$199" data-annual="$159">$159</span><span class="price-period" data-monthly="/mo" data-annual="/mo"> /mo</span>
+          </p>
+          <ul class="pricing-features" style="margin:20px 0;">
+            <li><span class="check">&#10003;</span> 200 classifications/mo</li>
+            <li><span class="check">&#10003;</span> HTS + Schedule B + Licensing</li>
+            <li><span class="check">&#10003;</span> Bulk classification</li>
+            <li><span class="check">&#10003;</span> Email support</li>
+          </ul>
+          <a href="https://app.trade-brain.com/register?plan=starter" class="btn-primary" style="width:100%;text-align:center;">Get Started</a>
+        </div>
+
+        <!-- PROFESSIONAL -->
+        <div class="pricing-card popular">
+          <span class="popular-badge">Most Popular</span>
+          <p class="tier-name" style="color:var(--blue); margin-bottom:12px;">Professional</p>
+          <p>
+            <span class="price" data-monthly="$799" data-annual="$639">$639</span><span class="price-period" data-monthly="/mo" data-annual="/mo"> /mo</span>
+          </p>
+          <ul class="pricing-features" style="margin:20px 0;">
+            <li><span class="check">&#10003;</span> 750 classifications/mo</li>
+            <li><span class="check">&#10003;</span> Everything in Starter</li>
+            <li><span class="check">&#10003;</span> Party Screening</li>
+            <li><span class="check">&#10003;</span> DSP-5 / TAA forms</li>
+            <li><span class="check">&#10003;</span> License Tracker</li>
+            <li><span class="check">&#10003;</span> Audit Trail</li>
+            <li><span class="check">&#10003;</span> 10 seats</li>
+            <li><span class="check">&#10003;</span> Priority support</li>
+          </ul>
+          <a href="https://app.trade-brain.com/register?plan=professional" class="btn-primary" style="width:100%;text-align:center;">Get Started</a>
+        </div>
+
+        <!-- MAX -->
+        <div class="pricing-card">
+          <p class="tier-name" style="color:var(--muted); margin-bottom:12px;">Max</p>
+          <p>
+            <span class="price" data-monthly="$1,899" data-annual="$1,519">$1,519</span><span class="price-period" data-monthly="/mo" data-annual="/mo"> /mo</span>
+          </p>
+          <ul class="pricing-features" style="margin:20px 0;">
+            <li><span class="check">&#10003;</span> Unlimited classifications</li>
+            <li><span class="check">&#10003;</span> Everything in Professional</li>
+            <li><span class="check">&#10003;</span> 25 seats</li>
+            <li><span class="check">&#10003;</span> API access</li>
+            <li><span class="check">&#10003;</span> Unlimited bulk runs</li>
+            <li><span class="check">&#10003;</span> Dedicated account manager</li>
+          </ul>
+          <a href="https://app.trade-brain.com/register?plan=max" class="btn-primary" style="width:100%;text-align:center;">Get Started</a>
+        </div>
+
+        <!-- ENTERPRISE -->
+        <div class="pricing-card">
+          <p class="tier-name" style="color:var(--muted); margin-bottom:12px;">Enterprise</p>
+          <p><span class="price">Custom</span></p>
+          <ul class="pricing-features" style="margin:20px 0;">
+            <li><span class="check">&#10003;</span> Everything in Max</li>
+            <li><span class="check">&#10003;</span> SSO / SAML</li>
+            <li><span class="check">&#10003;</span> On-premise deployment</li>
+            <li><span class="check">&#10003;</span> Custom integrations</li>
+            <li><span class="check">&#10003;</span> SLA</li>
+            <li><span class="check">&#10003;</span> White-label option</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="width:100%;text-align:center;">Contact Sales</a>
+        </div>
+
+      </div>
+
+      <p style="text-align:center; margin-top:40px; font-size:13px; color:var(--muted);">
+        Overage classifications billed at $0.50 each. All plans include AES-256 encryption, MFA, and audit trails.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <strong style="color:#fff; font-size:18px;">TradeBrain</strong>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 TradeBrain. All rights reserved.</span>
+        <span>support@trade-brain.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setPeriod(period) {
+      document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.period === period);
+      });
+      document.querySelectorAll('.price[data-monthly]').forEach(function(el) {
+        el.textContent = el.dataset[period];
+      });
+      document.querySelectorAll('.price-period[data-monthly]').forEach(function(el) {
+        el.textContent = el.dataset[period];
+      });
+    }
+    // Initialize with annual
+    setPeriod('annual');
+  </script>
+
+</body>
+</html>
