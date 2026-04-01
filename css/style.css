@@ -448,6 +448,87 @@ h4 { font-size: 18px; }
 }
 
 /* ============================================
+   LIVE CLASSIFICATION COUNTER
+   ============================================ */
+.live-counter-section {
+  padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+}
+.live-counter-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.live-counter-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #F8FAFC;
+  margin-bottom: 6px;
+}
+.live-counter-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+.live-counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.live-counter-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 24px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.live-counter-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.live-counter-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+.live-counter-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #F8FAFC;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.live-counter-note {
+  font-size: 11px;
+  color: #64748B;
+}
+.live-counter-footnote {
+  font-size: 12px;
+  color: #475569;
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .live-counter-grid { grid-template-columns: repeat(2, 1fr); }
+  .live-counter-number { font-size: 28px; }
+}
+@media (max-width: 480px) {
+  .live-counter-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .live-counter-card { padding: 18px 10px 14px; }
+  .live-counter-number { font-size: 24px; }
+}
+
+/* ============================================
    FEATURE GRID
    ============================================ */
 .features-grid {

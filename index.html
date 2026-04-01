@@ -95,6 +95,41 @@
     <div class="stat"><div class="stat-value">98%</div><div class="stat-label">Time Saved vs Manual</div></div>
   </div>
 
+  <!-- LIVE CLASSIFICATION COUNTER -->
+  <section class="live-counter-section">
+    <div class="live-counter-inner">
+      <h2 class="live-counter-title">Trusted Classification Intelligence</h2>
+      <p class="live-counter-subtitle">Real-time verified classifications powering global trade compliance</p>
+      <div class="live-counter-grid">
+        <div class="live-counter-card" style="--accent:#296BE2">
+          <div class="live-counter-accent"></div>
+          <span class="live-counter-label">HTS Import Classifications</span>
+          <span class="live-counter-number" id="lc-hts">--</span>
+          <span class="live-counter-note">Verified &amp; cached</span>
+        </div>
+        <div class="live-counter-card" style="--accent:#1A9E75">
+          <div class="live-counter-accent"></div>
+          <span class="live-counter-label">Schedule B Export Classifications</span>
+          <span class="live-counter-number" id="lc-sb">--</span>
+          <span class="live-counter-note">Verified &amp; cached</span>
+        </div>
+        <div class="live-counter-card" style="--accent:#9B7FE0">
+          <div class="live-counter-accent"></div>
+          <span class="live-counter-label">Bulk Classifications</span>
+          <span class="live-counter-number" id="lc-bulk">--</span>
+          <span class="live-counter-note">Verified &amp; cached</span>
+        </div>
+        <div class="live-counter-card" style="--accent:#E8A020">
+          <div class="live-counter-accent"></div>
+          <span class="live-counter-label">CBP Binding Rulings</span>
+          <span class="live-counter-number" id="lc-cbp">--</span>
+          <span class="live-counter-note">CROSS database &mdash; refreshed weekly</span>
+        </div>
+      </div>
+      <p class="live-counter-footnote">Counts update in real time as classifications are verified and stored.</p>
+    </div>
+  </section>
+
   <!-- FEATURES GRID -->
   <section class="section">
     <h2 class="section-header">Everything you need for export compliance</h2>
@@ -214,6 +249,58 @@
 
   <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Live counter fetch + animate -->
+  <script>
+  (function() {
+    var CACHE_KEY = 'tb_live_stats';
+    var CACHE_TTL = 5 * 60 * 1000;
+    var API = 'https://app.trade-brain.com/api/v1/public/stats';
+
+    function animate(el, target) {
+      if (!el || !target) return;
+      var start = Math.floor(target * 0.94);
+      var current = start;
+      var step = Math.max(1, Math.ceil((target - start) / 40));
+      el.textContent = start.toLocaleString();
+      var t = setInterval(function() {
+        current = Math.min(current + step, target);
+        el.textContent = current.toLocaleString();
+        if (current >= target) clearInterval(t);
+      }, 30);
+    }
+
+    function apply(d) {
+      animate(document.getElementById('lc-hts'), d.hts_import_count);
+      animate(document.getElementById('lc-sb'), d.schedule_b_export_count);
+      animate(document.getElementById('lc-bulk'), d.bulk_classification_count);
+      animate(document.getElementById('lc-cbp'), d.cbp_ruling_count);
+    }
+
+    function load() {
+      try {
+        var c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+        if (c && Date.now() - c.ts < CACHE_TTL) { apply(c.data); return; }
+      } catch(e) {}
+      fetch(API).then(function(r) { return r.json(); }).then(function(d) {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data: d }));
+        apply(d);
+      }).catch(function() {
+        try { var f = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null'); if (f) apply(f.data); } catch(e) {}
+      });
+    }
+
+    var section = document.querySelector('.live-counter-section');
+    if (section && 'IntersectionObserver' in window) {
+      var fired = false;
+      new IntersectionObserver(function(entries, obs) {
+        if (entries[0].isIntersecting && !fired) { fired = true; load(); obs.disconnect(); }
+      }, { threshold: 0.2 }).observe(section);
+    } else {
+      load();
+    }
+  })();
+  </script>
 
   <!-- Neural network hero background -->
   <script>
