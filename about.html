@@ -102,6 +102,7 @@
     .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;font-size:11px;color:#64748b;display:flex;justify-content:space-between;}
 
     @media(max-width:900px){
+      #lc-grid{grid-template-columns:repeat(2,1fr) !important;}
       .pillars-grid{grid-template-columns:1fr 1fr;}
       .who-grid{grid-template-columns:1fr;}
       .numbers-inner{grid-template-columns:1fr;}
@@ -187,6 +188,42 @@
       <div class="quote-attr">— TradeBrain</div>
     </div>
     <p>TradeBrain consolidates HTS Import classification, Schedule B Export classification, ECCN licensing analysis, restricted party screening, ITAR form generation, and license lifecycle tracking into one platform. Results that are accurate, defensible, and audit-ready.</p>
+  </section>
+
+  <!-- ═══════════ LIVE CLASSIFICATION COUNTER ═══════════ -->
+  <section style="padding:56px 24px 48px;background:linear-gradient(180deg,#0F172A 0%,#1E293B 100%);">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <div class="eye eye-light">LIVE PLATFORM DATA</div>
+      <h2 style="font-size:28px;font-weight:700;color:#F8FAFC;margin-bottom:6px;">Trusted Classification Intelligence</h2>
+      <p style="font-size:14px;color:#94A3B8;margin-bottom:36px;">Real-time verified classifications powering global trade compliance</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;" id="lc-grid">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px 16px 20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#296BE2;"></div>
+          <div style="font-size:11px;font-weight:600;color:#94A3B8;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;">HTS Import Classifications</div>
+          <div style="font-size:36px;font-weight:800;color:#F8FAFC;letter-spacing:-1px;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;" id="lc-hts2">--</div>
+          <div style="font-size:11px;color:#64748B;">Verified &amp; cached</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px 16px 20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#1A9E75;"></div>
+          <div style="font-size:11px;font-weight:600;color:#94A3B8;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;">Schedule B Export Classifications</div>
+          <div style="font-size:36px;font-weight:800;color:#F8FAFC;letter-spacing:-1px;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;" id="lc-sb2">--</div>
+          <div style="font-size:11px;color:#64748B;">Verified &amp; cached</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px 16px 20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#9B7FE0;"></div>
+          <div style="font-size:11px;font-weight:600;color:#94A3B8;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;">Bulk Classifications</div>
+          <div style="font-size:36px;font-weight:800;color:#F8FAFC;letter-spacing:-1px;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;" id="lc-bulk2">--</div>
+          <div style="font-size:11px;color:#64748B;">Verified &amp; cached</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px 16px 20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#E8A020;"></div>
+          <div style="font-size:11px;font-weight:600;color:#94A3B8;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;">CBP Binding Rulings</div>
+          <div style="font-size:36px;font-weight:800;color:#F8FAFC;letter-spacing:-1px;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;" id="lc-cbp2">--</div>
+          <div style="font-size:11px;color:#64748B;">CROSS database &mdash; refreshed weekly</div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:#475569;margin-top:24px;">Counts update in real time as classifications are verified and stored.</p>
+    </div>
   </section>
 
   <!-- ═══════════ FOUR PILLARS ═══════════ -->
@@ -336,6 +373,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══════════ LIVE COUNTER JS ═══════════ -->
+  <script>
+  (function(){
+    var API='https://app.trade-brain.com/api/v1/public/stats';
+    var CK='tb_live_stats';var TTL=300000;
+    function anim(el,target){if(!el||!target)return;var s=Math.floor(target*0.94),c=s,step=Math.max(1,Math.ceil((target-s)/40));el.textContent=s.toLocaleString();var t=setInterval(function(){c=Math.min(c+step,target);el.textContent=c.toLocaleString();if(c>=target)clearInterval(t);},30);}
+    function apply(d){anim(document.getElementById('lc-hts2'),d.hts_import_count);anim(document.getElementById('lc-sb2'),d.schedule_b_export_count);anim(document.getElementById('lc-bulk2'),d.bulk_classification_count);anim(document.getElementById('lc-cbp2'),d.cbp_ruling_count);}
+    function load(){try{var c=JSON.parse(localStorage.getItem(CK)||'null');if(c&&Date.now()-c.ts<TTL){apply(c.data);return;}}catch(e){}fetch(API).then(function(r){return r.json();}).then(function(d){localStorage.setItem(CK,JSON.stringify({ts:Date.now(),data:d}));apply(d);}).catch(function(){try{var f=JSON.parse(localStorage.getItem(CK)||'null');if(f)apply(f.data);}catch(e){}});}
+    var g=document.getElementById('lc-grid');
+    if(g&&'IntersectionObserver'in window){var fired=false;new IntersectionObserver(function(e,o){if(e[0].isIntersecting&&!fired){fired=true;load();o.disconnect();}},{threshold:0.2}).observe(g);}else{load();}
+  })();
+  </script>
 
   <!-- ═══════════ HERO ANIMATION ═══════════ -->
   <script>
