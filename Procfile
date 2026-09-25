@@ -1,1 +1,1 @@
-web: npx serve . -l $PORT
+web: npx serve . -l $PORT --single
