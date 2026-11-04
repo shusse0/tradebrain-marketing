@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | TradeBrain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body{background:#F8FAFC;}
+    .legal-wrap{max-width:900px;margin:0 auto;padding:110px 24px 64px;font-family:'Inter',sans-serif;}
+    .legal .content-card {background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);}
+    .legal h1 {color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 2rem;}
+    .legal .last-updated {color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);}
+    .legal h2 {color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;}
+    .legal h3 {color: var(--text-secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;}
+    .legal p {margin-bottom: 1rem;
+            color: var(--text-secondary);}
+    .legal ul, .legal ol {margin-bottom: 1rem;
+            padding-left: 1.5rem;}
+    .legal li {margin-bottom: 0.5rem;
+            color: var(--text-secondary);}
+    .legal .highlight-box {background: rgba(37, 99, 235, 0.06);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;}
+    .legal .highlight-box p {margin-bottom: 0;
+            color: var(--text-primary);}
+    .legal .contact-info {background: #F8FAFC;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border: 1px solid var(--border-color);}
+    .legal .contact-info h3 {margin-top: 0;
+            color: var(--text-primary);}
+    .legal .contact-info a {color: var(--primary);
+            text-decoration: none;}
+    .legal .contact-info a:hover {text-decoration: underline;}
+    .legal .content-card{background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;box-shadow:0 1px 3px rgba(15,23,42,0.06);}
+    .legal h1, .legal h2, .legal h3{font-family:'Inter',sans-serif;color:#0F172A;}
+    .legal a{color:#2563EB;}
+
+    /* ── FOOTER ── */
+    .about-footer{background:#0f172a;padding:48px 24px 32px;}
+    .about-footer .footer-inner{max-width:1200px;margin:0 auto;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;}
+    .footer-links{display:flex;gap:24px;}
+    .footer-links a{color:#fff;text-decoration:none;font-size:14px;}
+    .footer-links a:hover{text-decoration:underline;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;font-size:11px;color:#64748b;display:flex;justify-content:space-between;}
+
+    @media(max-width:600px){
+      .footer-top{flex-direction:column;gap:24px;}
+      .footer-bottom{flex-direction:column;gap:8px;}
+      .legal-wrap{padding-top:90px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+          <circle cx="6" cy="16" r="3" fill="#2563eb" opacity="0.7"/>
+          <circle cx="13" cy="8" r="2.5" fill="#2563eb"/>
+          <circle cx="13" cy="24" r="2.5" fill="#2563eb" opacity="0.6"/>
+          <circle cx="21" cy="11" r="2.5" fill="#1e3a8a"/>
+          <circle cx="21" cy="21" r="2.5" fill="#1e3a8a" opacity="0.8"/>
+          <circle cx="28" cy="16" r="3" fill="#1e3a8a"/>
+          <line x1="6" y1="16" x2="13" y2="8" stroke="#2563eb" stroke-width="1.2" opacity="0.5"/>
+          <line x1="6" y1="16" x2="13" y2="24" stroke="#2563eb" stroke-width="1.2" opacity="0.4"/>
+          <line x1="13" y1="8" x2="21" y2="11" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+          <line x1="13" y1="24" x2="21" y2="21" stroke="#1e3a8a" stroke-width="1.2" opacity="0.4"/>
+          <line x1="21" y1="11" x2="28" y2="16" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+          <line x1="21" y1="21" x2="28" y2="16" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+        </svg>
+        <span><strong style="color:#1E293B;">Trade</strong><strong style="color:#2563EB;">Brain</strong></span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="navbar-cta">Request Demo</a>
+      <a href="https://app.trade-brain.com/login" class="navbar-cta" style="background:transparent;color:#2563EB;border:2px solid #2563EB;margin-left:8px;">Sign In</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html">Request Demo</a>
+    </div>
+  </nav>
+
+  <main class="legal-wrap legal">
+        <div class="content-card">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: January 17, 2026</p>
+
+            <p>Welcome to TradeBrain ("Service"), operated by Defense Trade Solutions ("we," "us," or "our"). By accessing or using our Service, you agree to be bound by these Terms of Service ("Terms"). Please read them carefully.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By creating an account, accessing, or using TradeBrain, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not access or use the Service.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>TradeBrain is a software application that provides:</p>
+            <ul>
+                <li>Harmonized Tariff Schedule (HTS) classification assistance for U.S. imports</li>
+                <li>Schedule B classification assistance for U.S. exports</li>
+                <li>Electronic Export Information (EEI) filing requirement assessments</li>
+                <li>Export control screening and compliance guidance</li>
+                <li>Classification report generation</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Important Advisory Notice:</strong> The classifications and assessments provided by this Service are for advisory and informational purposes only. They do not constitute a binding ruling or determination by U.S. Customs and Border Protection (CBP), the U.S. Census Bureau, the Bureau of Industry and Security (BIS), or the Directorate of Defense Trade Controls (DDTC).</p>
+            </div>
+
+            <h2>3. User Responsibilities</h2>
+
+            <p><strong>3.1</strong> You are responsible for providing accurate and complete product descriptions, commodity information, and supporting documentation when using TradeBrain for classification analysis.</p>
+
+            <p><strong>3.2</strong> You acknowledge that TradeBrain provides classification guidance as a decision-support tool. As the importer or exporter of record, you retain ultimate responsibility for all classification, licensing, and compliance decisions.</p>
+
+            <p><strong>3.3</strong> You agree not to submit classified government information, Controlled Unclassified Information (CUI), or export-controlled technical data without proper authorization through the platform.</p>
+
+            <p><strong>3.4</strong> You agree not to use TradeBrain to facilitate any transaction that violates U.S. export control laws, sanctions regulations, or international trade compliance requirements.</p>
+
+            <p><strong>3.5</strong> You are responsible for maintaining the confidentiality of your account credentials and for all activity conducted under your account.</p>
+
+            <h2>4. Service Description and Limitations</h2>
+
+            <h3>4.1 Architecture</h3>
+            <p>TradeBrain uses proprietary classification algorithms and analytical models developed by Defense Trade Solutions to determine commodity classifications under the Harmonized Tariff Schedule (HTS) for imports and Schedule B for exports. The platform incorporates artificial intelligence services for natural language processing and product analysis as one component within a multi-layered classification engine.</p>
+            <p>All classification logic &mdash; including GRI (General Rules of Interpretation) analysis, Section and Chapter Note enforcement, candidate code generation, heading-level discrimination, confidence scoring, and regulatory compliance checks &mdash; is performed by the TradeBrain proprietary engine. AI services process product descriptions and return structured data which is then validated, scored, and refined by the TradeBrain classification brain before any result is presented to the user.</p>
+
+            <h3>4.2 Decision-Support Tool</h3>
+            <p>TradeBrain is a decision-support tool designed to assist trade compliance professionals with commodity classification analysis. Classifications provided by TradeBrain are advisory in nature and represent the platform's analytical determination based on the information provided by the user.</p>
+            <p>The user, as the importer or exporter of record, retains ultimate responsibility for all classification decisions, customs filings, export license determinations, and compliance with applicable laws and regulations. TradeBrain classifications should be reviewed by qualified trade compliance personnel before use in official filings or regulatory submissions.</p>
+
+            <h3>4.3 Accuracy and Continuous Improvement</h3>
+            <p>TradeBrain's classification engine is continuously tested, validated, and improved through rigorous quality assurance processes. While the platform achieves high accuracy rates across commodity categories, certain products may present classification ambiguities where multiple tariff headings could reasonably apply under the General Rules of Interpretation. In such cases, TradeBrain presents its analytical determination along with supporting rationale, enabling the user to make an informed final decision.</p>
+
+            <h3>4.4 Data Dependency</h3>
+            <p>Classification accuracy depends on the quality and completeness of information provided by the user. Vague, incomplete, or ambiguous product descriptions may result in lower-confidence classifications. Users are encouraged to provide detailed product descriptions, technical specifications, and supporting documentation to achieve the most accurate classification results.</p>
+
+            <h2>5. Data Retention</h2>
+            <p>Classification records and generated reports are retained for a period of <strong>one (1) year</strong> from creation. After this period:</p>
+            <ul>
+                <li>Reports may be automatically deleted from our systems</li>
+                <li>Classification history may be archived or removed</li>
+                <li>You are responsible for downloading and retaining any records you need for compliance purposes</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Record Keeping Reminder:</strong> U.S. export regulations may require retention of export records for five (5) years. Please ensure you maintain your own copies of all classification reports and supporting documentation.</p>
+            </div>
+
+            <h2>6. Intellectual Property</h2>
+            <p>The Service, including its software, design, logos, and content, is owned by Defense Trade Solutions and protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our express written permission.</p>
+
+            <h2>7. Limitation of Liability</h2>
+            <div class="warning-box">
+                <p><strong>DISCLAIMER:</strong> THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT CLASSIFICATIONS WILL BE ACCURATE, COMPLETE, OR SUITABLE FOR ANY PARTICULAR PURPOSE.</p>
+            </div>
+
+            <p>To the maximum extent permitted by law:</p>
+            <ul>
+                <li>Defense Trade Solutions shall not be liable for any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Defense Trade Solutions shall not be liable for any penalties, duties, fines, or enforcement actions resulting from your use of classifications</li>
+                <li>Our total liability shall not exceed the amount you paid for the Service in the twelve (12) months preceding the claim</li>
+                <li>You agree to indemnify and hold Defense Trade Solutions harmless from any claims arising from your use of the Service</li>
+            </ul>
+
+            <h2>8. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless Defense Trade Solutions, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
+            <ul>
+                <li>Your use of the Service</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any laws or regulations</li>
+                <li>Any classification decisions you make based on Service output</li>
+            </ul>
+
+            <h2>9. Refund Policy</h2>
+            <p>TradeBrain offers a 7-day money-back guarantee on all paid plans. If you are not satisfied within 7 days of your subscription start date, contact support@tradebrain.com for a full refund. Refunds are not available after the 7-day period. Free trial users are not eligible for refunds as no payment is collected during the trial.</p>
+
+            <h2>10. Termination</h2>
+            <p>We may suspend or terminate your access to the Service at any time for:</p>
+            <ul>
+                <li>Violation of these Terms</li>
+                <li>Suspected fraudulent or illegal activity</li>
+                <li>Extended periods of inactivity</li>
+                <li>At our sole discretion with reasonable notice</li>
+            </ul>
+            <p>Upon termination, your right to use the Service ceases immediately. Provisions that by their nature should survive termination shall remain in effect.</p>
+
+            <h2>10. Modifications to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will notify users of material changes via email or through the Service. Continued use of the Service after changes constitutes acceptance of the modified Terms.</p>
+
+            <h2>11. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the United States and the State of Virginia, without regard to conflict of law principles. Any disputes shall be resolved in the federal or state courts located in Virginia.</p>
+
+            <h2>12. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+            <h2>13. Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Defense Trade Solutions regarding the Service and supersede all prior agreements.</p>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>If you have questions about these Terms, please contact us:</p>
+                <p><strong>Defense Trade Solutions</strong><br>
+                Email: legal@defense-trade.com<br>
+                Website: <a href="https://defense-trade.com" target="_blank">defense-trade.com</a></p>
+            </div>
+        </div>
+  </main>
+
+  <footer class="about-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div style="margin-bottom:12px;">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none" style="vertical-align:middle;margin-right:8px;">
+              <circle cx="6" cy="16" r="3" fill="#93c5fd" opacity="0.7"/>
+              <circle cx="13" cy="8" r="2.5" fill="#93c5fd"/>
+              <circle cx="13" cy="24" r="2.5" fill="#93c5fd" opacity="0.6"/>
+              <circle cx="21" cy="11" r="2.5" fill="#ffffff"/>
+              <circle cx="21" cy="21" r="2.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="28" cy="16" r="3" fill="#ffffff"/>
+              <line x1="6" y1="16" x2="13" y2="8" stroke="#93c5fd" stroke-width="1.2" opacity="0.5"/>
+              <line x1="6" y1="16" x2="13" y2="24" stroke="#93c5fd" stroke-width="1.2" opacity="0.4"/>
+              <line x1="13" y1="8" x2="21" y2="11" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+              <line x1="13" y1="24" x2="21" y2="21" stroke="#ffffff" stroke-width="1.2" opacity="0.4"/>
+              <line x1="21" y1="11" x2="28" y2="16" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+              <line x1="21" y1="21" x2="28" y2="16" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+            </svg>
+            <span style="font-size:18px;font-weight:700;color:#ffffff;">Trade</span><span style="font-size:18px;font-weight:700;color:#93c5fd;">Brain</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span class="tb-year">2025-2026</span> Sharook Hussein. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+<script>(function () { var y = new Date().getFullYear(); var t = y > 2025 ? '2025-' + y : '2025'; document.querySelectorAll('.tb-year').forEach(function (e) { e.textContent = t; }); })();</script>
+</body>
+</html>
